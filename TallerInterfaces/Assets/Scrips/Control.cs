@@ -20,9 +20,7 @@ public class Control : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            //Debug.Log("Estoy undiendo w");
-            //transform.position +=Vector3.forward * velocidad * Time.deltaTime;//Forma mas extraña de hacerlo DEBIDO A QUE USA LAS COORDENADAS LOCALES SI SE ROTA PAILA
-            //transform.position += transform.forward * velocidad;
+           
             transform.position += transform.forward * velocidad * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
@@ -44,11 +42,15 @@ public class Control : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+            velocidad = 50f ;
+            
 
+        }
+        else { 
+            velocidad = 7f; 
         }
 
 

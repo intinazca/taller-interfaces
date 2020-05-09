@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class personaje : MonoBehaviour
 {
-    float velocidadMovimiento= 10f; //nos indica la velocidad del personaje
+    float velocidadMovimiento= 5f; //nos indica la velocidad del personaje
     float velocidadRotacion=  100.0f;//nos indica la velocidad del giro de las teclas
     private Animator anim;  //esto nos permite llamar a las animaciones
     public float x,y; // variabless para saber el sestado del movimiento 
@@ -28,6 +28,9 @@ public class personaje : MonoBehaviour
         
         anim.SetFloat("velX",x);
         anim.SetFloat("velY",y);
-        
+
+        bool Correr = Input.GetKey(KeyCode.LeftShift);
+        anim.SetBool("Correr", Correr);
+
     }
 }

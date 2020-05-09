@@ -15,10 +15,9 @@ public class CuerpoRigido : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CapsuleCollider capsuleCollider = gameObject.AddComponent<CapsuleCollider>();
-        Rigidbody gameObjectsRigidBody = gameObject.AddComponent<Rigidbody>();
-        //gameObject.AddComponent<Rigidbody>();
-        gameObjectsRigidBody.mass = 5;
+        BoxCollider boxCollider = gameObject.AddComponent<BoxCollider>();
+        boxCollider.center = new Vector3(0f, 0.01f, 0f);
+        boxCollider.size = new Vector3(0.00163381f, 0.02f, 0.001545235f);
 
     }
 

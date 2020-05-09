@@ -36,5 +36,12 @@ public class MenuP : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
 
     }
+
+    public void Menu()
+    {
+        //cuando corre el play cambia la escena a 0 que es la del menu principal
+        SceneManager.LoadScene("Menu");
+
+    }
 }
 

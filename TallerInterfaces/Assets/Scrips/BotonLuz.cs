@@ -9,7 +9,7 @@ public class BotonLuz : MonoBehaviour
 {
     public GameObject DirectionalLight;
     public GameObject SpotLight;
-    private bool Estado = true;
+    int estado =0;
 
     void Start()
     {
@@ -18,34 +18,29 @@ public class BotonLuz : MonoBehaviour
 
     void Update()
     {
-        actualizarEstado();
+        
+    }
+    //DirectionalLight.SetActive(false);
+
+   public void LuzEscenario()
+      {
+        if (estado == 0)
+        {
+            DirectionalLight.SetActive(true);
+            SpotLight.SetActive(false);
+            
+            estado = 1;
+            print("linterna on");
+        }
+
+        else if (estado == 1)
+        {
+            DirectionalLight.SetActive(false);
+            SpotLight.SetActive(true);
+            print("linterna off");
+            estado = 0;
+
+        }
     }
 
-            public void LuzEscenario()
-            {
-                if (Estado == false)
-                {
-                    DirectionalLight.SetActive(true);
-                    Estado = true;
-                }
-
-                else if (Estado == true)
-                {
-                    DirectionalLight.SetActive(false);
-                    Estado = false;
-                }
-            }
-
-           public void actualizarEstado()
-            {
-                if (DirectionalLight == false)
-                {
-                    Estado = false;
-                }
-                else if(DirectionalLight==true)
-                {
-                    Estado = true;
-                }
-            }
-        
 }
